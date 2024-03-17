@@ -1,3 +1,5 @@
+#Cada caracter é transmitido com um ponto "." ou traço "-". As palavras são separadas por um espaço em branco "/".
+
 $traducao = ""
 
 def q0(morse, index)
@@ -16,7 +18,7 @@ def q0(morse, index)
         index += 1
         q0(morse, index)
     when nil
- 
+
     else
         estado = "Erro"
     end
@@ -27,10 +29,10 @@ def q1(morse, index)
     case morse[index]
     when "."
         index += 1
-        q2(morse, index) 
+        q2(morse, index)
     when "-"
         index += 1
-        q6(morse, index) 
+        q6(morse, index)
     when "/"
         index += 1
         q3(morse, index)
@@ -40,7 +42,7 @@ def q1(morse, index)
         q0(morse, index)
     when nil
         $traducao.concat("e")
- 
+
     else
         estado = "Erro"
     end
@@ -51,7 +53,7 @@ def q2(morse, index)
     case morse[index]
     when "."
         index += 1
-        q3(morse, index) 
+        q3(morse, index)
     when "-"
         index += 1
         q12(morse, index)
@@ -63,7 +65,7 @@ def q2(morse, index)
         $traducao.concat("i")
         q0(morse, index)
     when nil
- 
+
         $traducao.concat("i")
     else
         estado = "Erro"
@@ -75,10 +77,10 @@ def q3(morse, index)
     case morse[index]
     when "."
         index += 1
-        q4(morse, index) 
+        q4(morse, index)
     when "-"
         index += 1
-        q11(morse, index) 
+        q11(morse, index)
     when "/"
         index += 1
         q3(morse, index)
@@ -88,7 +90,7 @@ def q3(morse, index)
         q0(morse, index)
     when nil
         $traducao.concat("s")
- 
+
     else
         estado = "Erro"
     end
@@ -102,7 +104,7 @@ def q4(morse, index)
         q5(morse, index)
     when "-"
         index += 1
-        q31(morse, index)
+        q30(morse, index)
     when "/"
         index += 1
         q3(morse, index)
@@ -111,7 +113,7 @@ def q4(morse, index)
         index += 1
         q0(morse, index)
     when nil
- 
+
         $traducao.concat("h")
     else
         estado = "Erro"
@@ -129,7 +131,7 @@ def q5(morse, index)
         index += 1
         q0(morse, index)
     when nil
- 
+
         $traducao.concat("5")
     else
         estado = "Erro"
@@ -141,7 +143,7 @@ def q6(morse, index)
     case morse[index]
     when "."
         index += 1
-        q7(morse, index) 
+        q7(morse, index)
     when "-"
         index += 1
         q9(morse, index)
@@ -153,7 +155,7 @@ def q6(morse, index)
         index += 1
         q0(morse, index)
     when nil
- 
+
         $traducao.concat("a")
     else
         estado = "Erro"
@@ -168,7 +170,7 @@ def q7(morse, index)
         q8(morse, index)
     when "-"
         index += 1
-        q38(morse, index)
+        q37(morse, index)
     when "/"
         index += 1
         q3(morse, index)
@@ -177,7 +179,7 @@ def q7(morse, index)
         index += 1
         q0(morse, index)
     when nil
- 
+
         $traducao.concat("r")
     else
         estado = "Erro"
@@ -195,7 +197,7 @@ def q8(morse, index)
         index += 1
         q0(morse, index)
     when nil
- 
+
         $traducao.concat("l")
     else
         estado = "Erro"
@@ -207,7 +209,7 @@ def q9(morse, index)
     case morse[index]
     when "."
         index += 1
-        q14(morse, index) 
+        q14(morse, index)
     when "-"
         index += 1
         q10(morse, index)
@@ -219,7 +221,7 @@ def q9(morse, index)
         index += 1
         q0(morse, index)
     when nil
- 
+
         $traducao.concat("w")
     else
         estado = "Erro"
@@ -231,7 +233,7 @@ def q10(morse, index)
     case morse[index]
     when "-"
       index += 1
-      q29(morse, index) 
+      q28(morse, index)
     when "/"
       index += 1
       q3(morse, index)
@@ -252,7 +254,7 @@ def q11(morse, index)
     case morse[index]
     when "-"
     index += 1
-    q30(morse, index) 
+    q29(morse, index)
     when "/"
         index += 1
         q3(morse, index)
@@ -261,7 +263,7 @@ def q11(morse, index)
         index += 1
         q0(morse, index)
     when nil
- 
+
         $traducao.concat("v")
     else
         estado = "Erro"
@@ -273,10 +275,10 @@ def q12(morse, index)
     case morse[index]
     when "."
         index += 1
-        q13(morse, index) 
+        q13(morse, index)
     when "-"
       index += 1
-      q37(morse, index) 
+      q36(morse, index)
     when "/"
         index += 1
         q3(morse, index)
@@ -285,7 +287,7 @@ def q12(morse, index)
         index += 1
         q0(morse, index)
     when nil
- 
+
         $traducao.concat("u")
     else
         estado = "Erro"
@@ -303,7 +305,7 @@ def q13(morse, index)
         index += 1
         q0(morse, index)
     when nil
- 
+
         $traducao.concat("f")
     else
         estado = "Erro"
@@ -321,7 +323,7 @@ def q14(morse, index)
         index += 1
         q0(morse, index)
     when nil
- 
+
         $traducao.concat("p")
     else
         estado = "Erro"
@@ -345,7 +347,7 @@ def q15(morse, index)
         index += 1
         q0(morse, index)
     when nil
- 
+
         $traducao.concat("t")
     else
         estado = "Erro"
@@ -369,7 +371,7 @@ def q16(morse, index)
         index += 1
         q0(morse, index)
     when nil
- 
+
         $traducao.concat("m")
     else
         estado = "Erro"
@@ -381,10 +383,10 @@ def q17(morse, index)
     case morse[index]
       when "."
       index += 1
-      q35(morse, index)
+      q34(morse, index)
      when "-"
       index += 1
-      q36(morse, index)
+      q35(morse, index)
     when "/"
         index += 1
         q3(morse, index)
@@ -393,7 +395,7 @@ def q17(morse, index)
         index += 1
         q0(morse, index)
     when nil
- 
+
         $traducao.concat("o")
     else
         estado = "Erro"
@@ -405,7 +407,7 @@ def q18(morse, index)
     case morse[index]
     when "."
         index += 1
-        q26(morse, index)
+        q25(morse, index)
     when "-"
         index += 1
         q19(morse, index)
@@ -417,7 +419,7 @@ def q18(morse, index)
         index += 1
         q0(morse, index)
     when nil
- 
+
         $traducao.concat("g")
     else
         estado = "Erro"
@@ -435,7 +437,7 @@ def q19(morse, index)
         index += 1
         q0(morse, index)
     when nil
- 
+
         $traducao.concat("q")
     else
         estado = "Erro"
@@ -450,7 +452,7 @@ def q20(morse, index)
         q21(morse, index)
     when "-"
         index += 1
-        q28(morse, index)
+        q27(morse, index)
     when "/"
         index += 1
         q3(morse, index)
@@ -459,7 +461,7 @@ def q20(morse, index)
         index += 1
         q0(morse, index)
     when nil
- 
+
         $traducao.concat("n")
     else
         estado = "Erro"
@@ -471,10 +473,10 @@ def q21(morse, index)
     case morse[index]
     when "."
         index += 1
-        q27(morse, index)
+        q26(morse, index)
     when "-"
         index += 1
-        q24(morse, index)
+        q23(morse, index)
     when "/"
         index += 1
         q3(morse, index)
@@ -483,8 +485,26 @@ def q21(morse, index)
         index += 1
         q0(morse, index)
     when nil
- 
+
         $traducao.concat("d")
+    else
+        estado = "Erro"
+    end
+end
+
+
+def q22(morse, index)
+    case morse[index]
+    when "/"
+        index += 1
+        q3(morse, index)
+    when " "
+        $traducao.concat("c")
+        index += 1
+        q0(morse, index)
+    when nil
+
+        $traducao.concat("c")
     else
         estado = "Erro"
     end
@@ -497,12 +517,12 @@ def q23(morse, index)
         index += 1
         q3(morse, index)
     when " "
-        $traducao.concat("c")
+        $traducao.concat("x")
         index += 1
         q0(morse, index)
     when nil
- 
-        $traducao.concat("c")
+
+        $traducao.concat("x")
     else
         estado = "Erro"
     end
@@ -515,12 +535,12 @@ def q24(morse, index)
         index += 1
         q3(morse, index)
     when " "
-        $traducao.concat("x")
+        $traducao.concat("y")
         index += 1
         q0(morse, index)
     when nil
- 
-        $traducao.concat("x")
+
+        $traducao.concat("y")
     else
         estado = "Erro"
     end
@@ -529,16 +549,22 @@ end
 
 def q25(morse, index)
     case morse[index]
+    when "."
+        index += 1
+        q32(morse, index)
+    when "-"
+        index += 1
+        q38(morse, index)
     when "/"
         index += 1
         q3(morse, index)
     when " "
-        $traducao.concat("y")
+        $traducao.concat("z")
         index += 1
         q0(morse, index)
     when nil
- 
-        $traducao.concat("y")
+
+        $traducao.concat("z")
     else
         estado = "Erro"
     end
@@ -547,22 +573,19 @@ end
 
 def q26(morse, index)
     case morse[index]
-    when "."
+      when "."
         index += 1
-        q33(morse, index)
-    when "-"
-        index += 1
-        q39(morse, index)
+        q31(morse, index)
     when "/"
         index += 1
         q3(morse, index)
     when " "
-        $traducao.concat("z")
+        $traducao.concat("b")
         index += 1
         q0(morse, index)
     when nil
- 
-        $traducao.concat("z")
+
+        $traducao.concat("b")
     else
         estado = "Erro"
     end
@@ -571,47 +594,43 @@ end
 
 def q27(morse, index)
     case morse[index]
-      when "."
+    when "."
         index += 1
-        q32(morse, index)
+        q22(morse, index)
+    when "-"
+        index += 1
+        q24(morse, index)
     when "/"
         index += 1
         q3(morse, index)
     when " "
-        $traducao.concat("b")
+        $traducao.concat("k")
         index += 1
         q0(morse, index)
     when nil
- 
-        $traducao.concat("b")
+
+        $traducao.concat("k")
     else
         estado = "Erro"
     end
-end
 
+end
 
 def q28(morse, index)
     case morse[index]
-    when "."
-        index += 1
-        q23(morse, index)
-    when "-"
-        index += 1
-        q25(morse, index)
     when "/"
         index += 1
         q3(morse, index)
     when " "
-        $traducao.concat("k")
+        $traducao.concat("1")
         index += 1
         q0(morse, index)
     when nil
- 
-        $traducao.concat("k")
+
+        $traducao.concat("1")
     else
         estado = "Erro"
     end
-
 end
 
 def q29(morse, index)
@@ -620,12 +639,12 @@ def q29(morse, index)
         index += 1
         q3(morse, index)
     when " "
-        $traducao.concat("1")
+        $traducao.concat("3")
         index += 1
         q0(morse, index)
     when nil
- 
-        $traducao.concat("1")
+
+        $traducao.concat("3")
     else
         estado = "Erro"
     end
@@ -637,12 +656,12 @@ def q30(morse, index)
         index += 1
         q3(morse, index)
     when " "
-        $traducao.concat("3")
+        $traducao.concat("4")
         index += 1
         q0(morse, index)
     when nil
- 
-        $traducao.concat("3")
+
+        $traducao.concat("4")
     else
         estado = "Erro"
     end
@@ -653,13 +672,16 @@ def q31(morse, index)
     when "/"
         index += 1
         q3(morse, index)
+    when "-"
+        index += 1
+        q45(morse, index)
     when " "
-        $traducao.concat("4")
+        $traducao.concat("6")
         index += 1
         q0(morse, index)
     when nil
- 
-        $traducao.concat("4")
+
+        $traducao.concat("6")
     else
         estado = "Erro"
     end
@@ -670,16 +692,13 @@ def q32(morse, index)
     when "/"
         index += 1
         q3(morse, index)
-    when "-"
-        index += 1
-        q46(morse, index)
     when " "
-        $traducao.concat("6")
+        $traducao.concat("7")
         index += 1
         q0(morse, index)
     when nil
- 
-        $traducao.concat("6")
+
+        $traducao.concat("7")
     else
         estado = "Erro"
     end
@@ -691,12 +710,12 @@ def q33(morse, index)
         index += 1
         q3(morse, index)
     when " "
-        $traducao.concat("7")
+        $traducao.concat("8")
         index += 1
         q0(morse, index)
     when nil
- 
-        $traducao.concat("7")
+
+        $traducao.concat("8")
     else
         estado = "Erro"
     end
@@ -704,16 +723,9 @@ end
 
 def q34(morse, index)
     case morse[index]
-    when "/"
+    when "."
         index += 1
-        q3(morse, index)
-    when " "
-        $traducao.concat("8")
-        index += 1
-        q0(morse, index)
-    when nil
- 
-        $traducao.concat("8")
+        q33(morse, index)
     else
         estado = "Erro"
     end
@@ -723,7 +735,10 @@ def q35(morse, index)
     case morse[index]
     when "."
         index += 1
-        q34(morse, index)
+        q39(morse, index)
+     when "-"
+        index += 1
+        q40(morse, index)
     else
         estado = "Erro"
     end
@@ -731,12 +746,12 @@ end
 
 def q36(morse, index)
     case morse[index]
-    when "."
-        index += 1
-        q40(morse, index)
-     when "-"
+    when "-"
         index += 1
         q41(morse, index)
+    when "."
+        index += 1
+        q46(morse, index)
     else
         estado = "Erro"
     end
@@ -744,12 +759,9 @@ end
 
 def q37(morse, index)
     case morse[index]
-    when "-"
-        index += 1
-        q42(morse, index)
     when "."
         index += 1
-        q47(morse, index)
+        q42(morse, index)
     else
         estado = "Erro"
     end
@@ -757,9 +769,9 @@ end
 
 def q38(morse, index)
     case morse[index]
-    when "."
+    when "-"
         index += 1
-        q43(morse, index)
+        q44(morse, index)
     else
         estado = "Erro"
     end
@@ -767,9 +779,16 @@ end
 
 def q39(morse, index)
     case morse[index]
-    when "-"
+    when "/"
         index += 1
-        q45(morse, index)
+        q3(morse, index)
+    when " "
+        $traducao.concat("9")
+        index += 1
+        q0(morse, index)
+    when nil
+
+        $traducao.concat("9")
     else
         estado = "Erro"
     end
@@ -781,12 +800,12 @@ def q40(morse, index)
         index += 1
         q3(morse, index)
     when " "
-        $traducao.concat("9")
+        $traducao.concat("0")
         index += 1
         q0(morse, index)
     when nil
- 
-        $traducao.concat("9")
+
+        $traducao.concat("0")
     else
         estado = "Erro"
     end
@@ -798,12 +817,12 @@ def q41(morse, index)
         index += 1
         q3(morse, index)
     when " "
-        $traducao.concat("0")
+        $traducao.concat("2")
         index += 1
         q0(morse, index)
     when nil
- 
-        $traducao.concat("0")
+
+        $traducao.concat("2")
     else
         estado = "Erro"
     end
@@ -811,16 +830,9 @@ end
 
 def q42(morse, index)
     case morse[index]
-    when "/"
+    when "-"
         index += 1
-        q3(morse, index)
-    when " "
-        $traducao.concat("2")
-        index += 1
-        q0(morse, index)
-    when nil
- 
-        $traducao.concat("2")
+        q43(morse, index)
     else
         estado = "Erro"
     end
@@ -828,9 +840,13 @@ end
 
 def q43(morse, index)
     case morse[index]
-    when "-"
+    when " "
+        $traducao.concat(".")
         index += 1
-        q44(morse, index)
+        q0(morse, index)
+    when nil
+
+        $traducao.concat(".")
     else
         estado = "Erro"
     end
@@ -839,12 +855,12 @@ end
 def q44(morse, index)
     case morse[index]
     when " "
-        $traducao.concat(".")
+        $traducao.concat(",")
         index += 1
         q0(morse, index)
     when nil
- 
-        $traducao.concat(".")
+
+        $traducao.concat(",")
     else
         estado = "Erro"
     end
@@ -853,12 +869,12 @@ end
 def q45(morse, index)
     case morse[index]
     when " "
-        $traducao.concat(",")
+        $traducao.concat("-")
         index += 1
         q0(morse, index)
     when nil
- 
-        $traducao.concat(",")
+
+        $traducao.concat("-")
     else
         estado = "Erro"
     end
@@ -866,13 +882,9 @@ end
 
 def q46(morse, index)
     case morse[index]
-    when " "
-        $traducao.concat("-")
+    when "."
         index += 1
-        q0(morse, index)
-    when nil
- 
-        $traducao.concat("-")
+        q47(morse, index)
     else
         estado = "Erro"
     end
@@ -880,22 +892,12 @@ end
 
 def q47(morse, index)
     case morse[index]
-    when "."
-        index += 1
-        q48(morse, index)
-    else
-        estado = "Erro"
-    end
-end
-
-def q48(morse, index)
-    case morse[index]
     when " "
         $traducao.concat("?")
         index += 1
         q0(morse, index)
     when nil
- 
+
         $traducao.concat("?")
     else
         estado = "Erro"
